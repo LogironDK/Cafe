@@ -5,7 +5,16 @@ namespace Cafe {
   public partial class MainFrom : Form {
     public MainFrom() {
       InitializeComponent();
-      dataGridView1.DataSource = CafeDatabase.GetDishes();
+
+      GetData();
+      
+    }
+
+    private void GetData() {
+      //CafeDatabase.GetDishes();
+      dataGridView1.DataSource = CafeDatabase.GetOrder();
+
+
     }
   }
 }

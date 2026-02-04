@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Cafe.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,6 +19,23 @@ namespace Cafe.Models {
 
     public void DeleteDish(Dish dish) {
       Dishes.Remove(dish);
+    }
+
+    public static Client GetClient(int id) {
+      Client Client = new();
+      List<Client> clients = CafeDatabase.GetClient();
+
+      return clients.Find(c => c.Id == id);
+    }
+
+    public static List<Dish> GetDishes(string dishesId) {
+      List<Dish> dishesForOrder = new();
+      List<Dish> dishes = CafeDatabase.GetDishes();
+
+      int[] disesIdInt = dishesId.Split(',').Select(d => Int32.Parse(d)).ToArray();
+      dishesForOrder = dishes.Where(d => disesIdInt.Contains(d.Id)).ToList();
+
+      return dishesForOrder;
     }
   }
 }
