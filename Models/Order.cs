@@ -12,6 +12,7 @@ namespace Cafe.Models {
     public List<Dish> Dishes { get; set; } = [];
     public DateTime DateTime { get; set; } = DateTime.Now;
     public decimal TotalPrice => Dishes.Sum(d => d.Price);
+    public string DisplayDishes => string.Join(", ", Dishes.Select(d => d.ToString()));
 
     public void AddDish(Dish dish) {
       Dishes.Add(dish);

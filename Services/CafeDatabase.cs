@@ -3,7 +3,7 @@ using Microsoft.Data.Sqlite;
 
 namespace Cafe.Services {
   public class CafeDatabase {
-    private static readonly string ConnectionString = Path.Combine(AppContext.BaseDirectory, @"..\..\..\cafe.db");
+    public static readonly string ConnectionString = Path.Combine(AppContext.BaseDirectory, @"..\..\..\cafe.db");
 
     public static List<Dish> GetDishes() {
       using var conn = new SqliteConnection($"Data Source={ConnectionString}");
