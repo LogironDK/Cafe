@@ -21,7 +21,7 @@ namespace Cafe.Services {
       using var conn = new SqliteConnection($"Data Source={CafeDatabase.ConnectionString}");
       conn.Open();
 
-      using var cmd = new SqliteCommand($"DELETE FROM ORDERS WHERE id = {id}", conn);
+      using var cmd = new SqliteCommand($"DELETE FROM Clients WHERE id = {id}", conn);
       cmd.ExecuteNonQuery();
       conn.Close();
     }
