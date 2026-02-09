@@ -76,22 +76,23 @@
       // AddOrderToolStripMenuItem
       // 
       AddOrderToolStripMenuItem.Name = "AddOrderToolStripMenuItem";
-      AddOrderToolStripMenuItem.Size = new Size(270, 34);
+      AddOrderToolStripMenuItem.Size = new Size(260, 34);
       AddOrderToolStripMenuItem.Text = "Добавить заказ";
       AddOrderToolStripMenuItem.Click += AddOrderToolStripMenuItem_Click;
       // 
       // AddClientToolStripMenuItem
       // 
       AddClientToolStripMenuItem.Name = "AddClientToolStripMenuItem";
-      AddClientToolStripMenuItem.Size = new Size(270, 34);
+      AddClientToolStripMenuItem.Size = new Size(260, 34);
       AddClientToolStripMenuItem.Text = "Добавить клиента";
       AddClientToolStripMenuItem.Click += AddClientToolStripMenuItem_Click;
       // 
       // AddDishToolStripMenuItem
       // 
       AddDishToolStripMenuItem.Name = "AddDishToolStripMenuItem";
-      AddDishToolStripMenuItem.Size = new Size(270, 34);
+      AddDishToolStripMenuItem.Size = new Size(260, 34);
       AddDishToolStripMenuItem.Text = "Добавить блюдо";
+      AddDishToolStripMenuItem.Click += AddDishToolStripMenuItem_Click;
       // 
       // splitContainer
       // 
@@ -120,6 +121,7 @@
       mainView.RowHeadersWidth = 62;
       mainView.Size = new Size(1167, 388);
       mainView.TabIndex = 0;
+      mainView.KeyDown += Table_KeyDown;
       // 
       // tabControl
       // 
@@ -153,6 +155,7 @@
       clientsView.RowHeadersWidth = 62;
       clientsView.Size = new Size(1153, 149);
       clientsView.TabIndex = 0;
+      clientsView.KeyDown += Table_KeyDown;
       // 
       // tabDishes
       // 
